@@ -97,6 +97,8 @@ public class Main {
 				if (board.gameOver()) {
 					writers[turn%2].write("Victory\n");
 					writers[(turn+1)%2].write("Defeat\n");
+					writers[0].flush();
+					writers[1].flush();
 					p1.destroy();
 					p2.destroy();
 					results[turn%2]++;
@@ -105,6 +107,8 @@ public class Main {
 				if(set.isEmpty()){
 					writers[0].write("Tie\n");
 					writers[1].write("Tie\n");
+					writers[0].flush();
+					writers[1].flush();
 					p1.destroy();
 					p2.destroy();
 					results[2]++;
